@@ -81,7 +81,7 @@ public class SqlTracker implements Store {
     public List<Item> findAll() {
         return executeSelect(
                 "select id, name, created from items",
-                ps -> {},
+                ps -> { },
                 this::createItem
         );
     }

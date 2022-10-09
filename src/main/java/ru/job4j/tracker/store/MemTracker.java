@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class MemTracker {
+public class MemTracker implements Store {
 
     private final List<Item> items = new ArrayList<>();
 
@@ -55,6 +55,9 @@ public class MemTracker {
         return true;
     }
 
+    @Override
+    public void close() throws Exception { }
+
     private int indexOf(int id) {
         int index = -1;
         for (int i = 0; i < items.size(); i++) {
@@ -65,5 +68,4 @@ public class MemTracker {
         }
         return index;
     }
-
 }

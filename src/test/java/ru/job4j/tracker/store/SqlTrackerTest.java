@@ -55,7 +55,7 @@ public class SqlTrackerTest {
     }
 
     @Test
-    public void whenSave_ItemAndFindByGeneratedIdThenMustBeTheSame() {
+    public void whenSaveItemAndFindByGeneratedIdThenMustBeTheSame() {
         SqlTracker tracker = new SqlTracker(connection);
         Item item = new Item("item");
         tracker.add(item);
@@ -63,7 +63,7 @@ public class SqlTrackerTest {
     }
 
     @Test
-    public void whenReplace_ItemAndFindByGeneratedIdThenMustBeTheSame() {
+    public void whenReplaceItemAndFindByGeneratedIdThenMustBeTheSame() {
         SqlTracker tracker = new SqlTracker(connection);
         Item item = tracker.add(new Item("item1"));
         item.setName("item2");
@@ -73,7 +73,7 @@ public class SqlTrackerTest {
     }
 
     @Test
-    public void whenDelete_ItemAndFindByGeneratedIdThenMustBeTheSame() {
+    public void whenDeleteItemAndFindByGeneratedIdThenMustBeTheSame() {
         SqlTracker tracker = new SqlTracker(connection);
         Item item = tracker.add(new Item("item1"));
         boolean result = tracker.delete(item.getId());
@@ -82,7 +82,7 @@ public class SqlTrackerTest {
     }
 
     @Test
-    public void whenFindAll_ResultMustContainAllAddedItems() {
+    public void whenFindAllResultMustContainAllAddedItems() {
         SqlTracker tracker = new SqlTracker(connection);
         List<Item> items = List.of(
                 new Item("item1"),
@@ -93,7 +93,7 @@ public class SqlTrackerTest {
     }
 
     @Test
-    public void whenFindByName_ResultMustContainAllAddedItems() {
+    public void whenFindByNameResultMustContainAllAddedItems() {
         String name = "item1";
         SqlTracker tracker = new SqlTracker(connection);
         List<Item> items = List.of(

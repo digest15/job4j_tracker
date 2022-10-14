@@ -84,23 +84,17 @@ public class SqlTrackerTest {
     @Test
     public void whenFindAllResultMustContainAllAddedItems() {
         SqlTracker tracker = new SqlTracker(connection);
-        List<Item> items = List.of(
-                new Item("item1"),
-                new Item("item2")
-        );
-        items.forEach(tracker::add);
-        assertThat(tracker.findAll(), is(items));
+        Item item1 = tracker.add(new Item("item1"));
+        Item item2 = tracker.add(new Item("item2"));
+        assertThat(tracker.findAll(), is(List.of(item1, item2)));
     }
 
     @Test
     public void whenFindByNameResultMustContainAllAddedItems() {
         String name = "item1";
         SqlTracker tracker = new SqlTracker(connection);
-        List<Item> items = List.of(
-                new Item(name),
-                new Item(name)
-        );
-        items.forEach(tracker::add);
-        assertThat(tracker.findByName(name), is(items));
+        Item item1 = tracker.add(new Item("item1"));
+        Item item2 = tracker.add(new Item("item2"));
+        assertThat(tracker.findByName(name), is(List.of(item1, item2)));
     }
 }

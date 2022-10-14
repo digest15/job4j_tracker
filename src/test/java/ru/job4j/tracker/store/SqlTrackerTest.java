@@ -1,7 +1,5 @@
 package ru.job4j.tracker.store;
 
-import junit.framework.TestCase;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -95,6 +93,6 @@ public class SqlTrackerTest {
         SqlTracker tracker = new SqlTracker(connection);
         Item item1 = tracker.add(new Item("item1"));
         Item item2 = tracker.add(new Item("item2"));
-        assertThat(tracker.findByName(name), is(List.of(item1, item2)));
+        assertThat(tracker.findByName(name), is(List.of(item1)));
     }
 }

@@ -18,7 +18,7 @@ public class MemTracker implements Store {
     }
 
     public List<Item> findAll() {
-        return items;
+        return new ArrayList<>(items);
     }
 
     public Item findById(int id) {

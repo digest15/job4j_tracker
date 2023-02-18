@@ -20,7 +20,7 @@ public class HQLUsage {
             for (Object st : query.list()) {
                 System.out.println(st);
             }
-            query = session.createQuery("from ru.job4j.Item", Item.class);
+            query = session.createQuery("from Item", Item.class);
 
             /* Select with parameter */
             query = session.createQuery(

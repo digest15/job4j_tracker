@@ -6,6 +6,7 @@ import ru.job4j.tracker.input.Input;
 import ru.job4j.tracker.input.ValidateInput;
 import ru.job4j.tracker.output.ConsoleOutput;
 import ru.job4j.tracker.output.Output;
+import ru.job4j.tracker.store.HbmTracker;
 import ru.job4j.tracker.store.MemTracker;
 import ru.job4j.tracker.store.SqlTracker;
 import ru.job4j.tracker.store.Store;
@@ -48,7 +49,7 @@ public class StartUI {
                 new DeleteAllAction(output),
                 new ExitAction()
         );
-        try (Store tracker = new MemTracker()) {
+        try (Store tracker = new HbmTracker()) {
             new StartUI().init(validate, tracker, actions);
         } catch (Exception e) {
             e.printStackTrace();

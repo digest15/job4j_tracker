@@ -3,7 +3,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import ru.job4j.tracker.model.User;
-import ru.job4j.tracker.model.repository.UserRepository;
+import ru.job4j.tracker.repository.UserRepository;
 
 public class UserUsage {
     public static void main(String[] args) {

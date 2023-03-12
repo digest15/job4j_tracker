@@ -1,4 +1,4 @@
-package ru.job4j.tracker.model.repository;
+package ru.job4j.tracker.repository;
 
 import lombok.AllArgsConstructor;
 import org.hibernate.Session;

@@ -16,5 +16,6 @@
         <mapping class="ru.job4j.tracker.model.Item" />
         <mapping class="ru.job4j.tracker.model.JRole" />
         <mapping class="ru.job4j.tracker.model.JUser" />
+        <mapping class="ru.job4j.tracker.model.UserMessenger" />
     </session-factory>
 </hibernate-configuration>
